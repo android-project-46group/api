@@ -1,7 +1,6 @@
 {
 	"kakehashisayaka": "https://firebasestorage.googleapis.com/v0/b/my-memory-3b3bd.appspot.com/o/saka%2Fnogizaka%2Fkakehashisayaka.jpeg?alt=media",
 	"watanabemiria": "https://firebasestorage.googleapis.com/v0/b/my-memory-3b3bd.appspot.com/o/saka%2Fnogizaka%2Fwatanabemiria.jpeg?alt=media",
-	"itoujunna": "https://firebasestorage.googleapis.com/v0/b/my-memory-3b3bd.appspot.com/o/saka%2Fnogizaka%2Fitoujunna.jpeg?alt=media",
 	"oozonomomoko": "https://firebasestorage.googleapis.com/v0/b/my-memory-3b3bd.appspot.com/o/saka%2Fnogizaka%2Foozonomomoko.jpeg?alt=media",
 	"ikutaerika": "https://firebasestorage.googleapis.com/v0/b/my-memory-3b3bd.appspot.com/o/saka%2Fnogizaka%2Fikutaerika.jpeg?alt=media",
 	"matsuomiyu": "https://firebasestorage.googleapis.com/v0/b/my-memory-3b3bd.appspot.com/o/saka%2Fnogizaka%2Fmatsuomiyu.jpeg?alt=media",

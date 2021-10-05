@@ -70,6 +70,9 @@ def main(group_name):
     with open(f"url_infos_{group_name}.txt", mode='rt', encoding='utf-8') as f:
         url_infos = json.load(f)
 
+    with open(f"blogUrls_{group_name}.txt", mode='rt', encoding='utf-8') as f:
+        blog_url_infos = json.load(f)
+
     print(DATA_PATH)
     import json
     # member_infos = ""
@@ -88,10 +91,11 @@ def main(group_name):
             u'height': member_info["身長"],
             u'blood_type': member_info["血液型"],
             u'generation': member_info["世代"],
+            u'blog_url': blog_url_infos[name_en],
             u'img_url': url_infos[name_en],
         })
 
 if __name__ == "__main__":
     # GROUP_NAME = "nogizaka"   hinatazaka      sakurazaka
-    main("nogizaka")
+    main("sakurazaka")
     # save_urls()
