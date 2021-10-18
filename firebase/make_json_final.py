@@ -64,11 +64,12 @@ def main(group_name):
         member_infos = json.load(f)
 
     member_infos_final = {}
+    tmp = []
     for name_en, member_info in member_infos.items():
         print(name_en)
         print(member_info["生年月日"])
 
-        member_infos_final[name_en] = {            
+        tmp.append({
             'name_ja': member_info["名前"],
             'birthday': member_info["生年月日"],
             'height': member_info["身長"],
@@ -76,11 +77,12 @@ def main(group_name):
             'generation': member_info["世代"],
             'blog_url': blog_url_infos[name_en],
             'img_url': url_infos[name_en],
-        }
+        })
 
+    # member_infos_final["members"] = tmp
     import json
     with open(f'data/{group_name}.json', 'w') as f:
-        json.dump(member_infos_final, f, indent=2)
+        json.dump(tmp, f, indent=2)
 
 
 if __name__ == "__main__":
