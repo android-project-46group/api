@@ -69,6 +69,13 @@ def main(group_name):
         print(name_en)
         print(member_info["生年月日"])
 
+        if group_name == 'nogizaka':
+            gn = 'nogi'
+        elif group_name == 'hinatazaka':
+            gn = 'hinata'
+        else:
+            gn = 'sakura'
+
         tmp.append({
             'name_ja': member_info["名前"],
             'birthday': member_info["生年月日"],
@@ -76,7 +83,7 @@ def main(group_name):
             'blood_type': member_info["血液型"],
             'generation': member_info["世代"],
             'blog_url': blog_url_infos[name_en],
-            'img_url': url_infos[name_en],
+            'img_url': f'https://kokoichi0206.mydns.jp/imgs/{gn}/{name_en}.jpeg',
         })
 
     # member_infos_final["members"] = tmp
