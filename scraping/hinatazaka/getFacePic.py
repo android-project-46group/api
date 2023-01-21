@@ -42,7 +42,7 @@ def scraping_allpic():
 
         # 予想より多く detail が取れているみたいなので
         # 無理矢理最後のメンバーで終わらせる
-        if name_ja == '山口 陽世':
+        if name_ja == '渡辺 莉奈':
             break
 
 def kana2latin(kana):
