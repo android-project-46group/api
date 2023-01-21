@@ -2,6 +2,7 @@ from pykakasi.legacy import kakasi
 import requests
 from bs4 import BeautifulSoup
 import pykakasi
+import json
 
 
 def scrapingDetailedInfo():
@@ -20,6 +21,13 @@ def scrapingDetailedInfo():
     infos = {}
     JAPANESE_NAME_TAG = '名前'
     PERSONAL_INFO_TAG = ["生年月日", "血液型", '星座', '身長']
+
+    # FIXME: 何期生かをとってくる機構がないので、先頭のメンバーで判断している。
+    FIRST_MENBER_2ND = "金村 美玖"
+    FIRST_MENBER_3RD = "上村 ひなの"
+    FIRST_MENBER_4TH = "石塚 瑶季"
+    generation = "1期生"
+
     BASE_URL = 'https://www.hinatazaka46.com'
     for detail in details:
         person = {}
@@ -54,11 +62,19 @@ def scrapingDetailedInfo():
             if tag_name != '出身地':
                 person[tag_name] = info
 
+        if name_ja == FIRST_MENBER_2ND:
+            generation = "2期生"
+        if name_ja == FIRST_MENBER_3RD:
+            generation = "3期生"
+        if name_ja == FIRST_MENBER_4TH:
+            generation = "4期生"
+        person["generation"] = generation
+
         infos[name_en] = person
 
         # 予想より多く detail が取れているみたいなので
         # 無理矢理最後のメンバーで終わらせる
-        if name_ja == '山口 陽世':
+        if name_ja == '渡辺 莉奈':
             break
 
     return infos
@@ -85,23 +101,11 @@ def main():
     ## key = 'akimotomanatsu'
     ## value = {'生年月日': '1993年8月20日', '血液型': 'B型', '星座': 'しし座', '身長': '154cm'}
 
-    TAB         = '\t'
-    NEW_LINE    = '\n'
-    DICT_START  = '{'
-    DICT_END    = '}'
-    with open('detailed_infos.txt', mode='w') as f:
-        f.write(f'{DICT_START}{NEW_LINE}')
-        for name_en, detailed_info in detailed_infos.items():
-            f.write(f'{TAB}"{name_en}": {DICT_START}{NEW_LINE}')
-            for info_tag, data in detailed_info.items():
-                f.write(f'{TAB}{TAB}"{info_tag}": "{data}",{NEW_LINE}')
-            f.write(f'{TAB}{DICT_END},{NEW_LINE}')
-        f.write(f'{DICT_END}{NEW_LINE}')
-
+    with open('detailed_infos.txt', 'w') as f:
+        json.dump(detailed_infos, f, indent=2)
 
     with open('names.txt', mode='w') as g:
-        for name_en, detailed_info in detailed_infos.items():
-            g.write(f'{name_en}{NEW_LINE}')
+        json.dump(list(detailed_infos.keys()), g, indent=2)
 
 
 if __name__ == '__main__':
