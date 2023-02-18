@@ -19,10 +19,9 @@ def main():
         item["height"] = v["height"]
         item["blood_type"] = v["blood_type"]
         item["generation"] = v["generation"]
+        item["graduation"] = v["graduation"]
         print(k)
-        if item["generation"] == "5期生":
-            item["blog_url"] = blogs["5期生リレー"]
-        elif v["graduation"] == "NO":
+        if v["graduation"] == "NO":
             item["blog_url"] = blogs[k]
         else:
             # 公式ブログトップ
