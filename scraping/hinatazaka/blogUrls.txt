@@ -16,7 +16,6 @@
 	"hamagishihiyori": "https://hinatazaka46.com/s/official/diary/member/list?ima=0000&ct=17",
 	"matsudakonoka": "https://hinatazaka46.com/s/official/diary/member/list?ima=0000&ct=18",
 	"miyatamanamo": "https://hinatazaka46.com/s/official/diary/member/list?ima=0000&ct=19",
-	"watanabemiho": "https://hinatazaka46.com/s/official/diary/member/list?ima=0000&ct=20",
 	"kamimurahinano": "https://hinatazaka46.com/s/official/diary/member/list?ima=0000&ct=21",
 	"takahashimikuni": "https://hinatazaka46.com/s/official/diary/member/list?ima=0000&ct=22",
 	"morimotomarii": "https://hinatazaka46.com/s/official/diary/member/list?ima=0000&ct=23",
