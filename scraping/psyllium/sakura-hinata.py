@@ -50,10 +50,16 @@ if __name__ == '__main__':
     sakura_2022 = scrapingColorsFromKeyakiFes("https://sakurazaka46.com/s/s46/diary/detail/44749?ima=0000&link=ROBO004&cd=wkf2022_cont")
     hinata_2022 = scrapingColorsFromKeyakiFes("https://www.hinatazaka46.com/s/official/diary/detail/44750?ima=0000&link=ROBO004&cd=wkf2022_cont")
 
+    sakura_3rd = scrapingColorsFromKeyakiFes("https://sakurazaka46.com/s/s46/diary/detail/49387?ima=4005&cd=3rd_omotena_cont")
+
+    # 被りが発生した場合は上書きする。
     for name, colors in sakura_2022.items():
         all_sakura[name] = colors
     for name, colors in hinata_2022.items():
         all_hinata[name] = colors
+
+    for name, colors in sakura_3rd.items():
+        all_sakura[name] = colors
 
     with open(f'./hinata.json', 'w') as f:
         json.dump(all_hinata, f, indent=2, ensure_ascii=False)
